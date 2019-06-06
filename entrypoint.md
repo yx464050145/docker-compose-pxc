@@ -5,7 +5,7 @@ exec mysqld --user=mysql --wsrep_cluster_name=$CLUSTER_NAME --wsrep_cluster_addr
  --wsrep-provider-options="ist.recv_bind=0.0.0.0"  #监听本来0.0.0.0  重点
 
 
-
+### 脚本
 version: '2'
 services:
   pxc:
