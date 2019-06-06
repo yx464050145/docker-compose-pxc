@@ -1,0 +1,22 @@
+version: '2'
+services:
+  pxc:
+    image: percona/percona-xtradb-cluster:5.6
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./conf:/etc/mysql
+      - ./shell:/shell
+    entrypoint: [ '/bin/bash', '/shell/entrypoint.sh']
+    command: --wsrep_node_address=192.168.188.150
+    environment:
+      DESYNC: 1
+      CLUSTER_JOIN: 192.168.188.166
+      CLUSTER_NAME: yanxin
+      XTRABACKUP_PASSWORD: yx979150
+      MYSQL_ROOT_PASSWORD: yanxin
+      TZ: Asia/Shanghai
+    ports:
+      - 3306:3306
+      - 4567:4567
+      - 4568:4568
+      - 4444:4444
