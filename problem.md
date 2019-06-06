@@ -12,7 +12,7 @@ mysqld --user=mysql --wsrep_cluster_name=$CLUSTER_NAME --wsrep_node_name=$hostna
     --wsrep-provider-options="ist.recv_bind=0.0.0.0" \
     --wsrep_node_address="$ipaddr" $CMDARG
 
---wsrep-provider-options="ist.recv_bind=0.0.0.0" \
+--wsrep-provider-options="ist.recv_bind=0.0.0.0" \  重点，bind 本地0.0.0.0
     --wsrep_node_address="$ipaddr" $CMDARG 重点，必须这样设置，负责无限报32错误
 ### 加入集群
 主节点在down机后，需要修改compose文件，添加join
