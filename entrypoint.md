@@ -1,4 +1,4 @@
-# pxc容器启动命令
+### pxc容器启动命令
 exec mysqld --user=mysql --wsrep_cluster_name=$CLUSTER_NAME --wsrep_cluster_address="gcomm://$cluster_join" --wsrep_sst_method=xtrabackup-v2 --wsrep_sst_auth="xtrabackup:$XTRABACKUP_PASSWORD" \
  --wsrep-provider-options="ist.recv_bind=0.0.0.0" $CMDARG
  
